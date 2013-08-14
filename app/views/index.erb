@@ -1,0 +1,24 @@
+<div class="container">
+
+  <%# TODO: 
+ /* 1. If user is not signed in - display "Welcome" 
+
+  /*2. If user is signed in then  display all users %>  
+
+  <% if !session[:user_id]  %>
+    <h3>Welcome, Please sign in</h3>
+   <div class="flash-error"> <%= flash[:error] %> </div>
+  <% else %>
+    <h3>Welcome, <%= "#{current_user.name}" %></h3>
+    <h2>List of all Users in DB</h2>
+    <ul>
+    <% @user_array.each do |user| %>
+      <li>
+        <%=  " User: #{user.name}, Email: #{user.email}" %>
+      </li>
+    <%end%>
+    </ul>
+  <% end %>
+
+
+</div>
